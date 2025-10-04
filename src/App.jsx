@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import inviteImg from "./assets/invite.png"; // make sure image is here
 
 export default function App() {
   const [showCard, setShowCard] = useState(false);
@@ -9,13 +8,13 @@ export default function App() {
   useEffect(() => {
     if (showCard) {
       const interval = setInterval(() => {
-        const size = 20 + Math.random() * 20;       // 20-40px
-        const duration = 3 + Math.random() * 3;    // 3-6s
+        const size = 20 + Math.random() * 20; // 20-40px
+        const duration = 3 + Math.random() * 3; // 3-6s
         const left = Math.random() * 100;
 
         setFlowers((prev) => [
           ...prev,
-          { id: Date.now(), left, size, duration },
+          { id: Date.now() + Math.random(), left, size, duration },
         ]);
       }, 300);
 
@@ -31,7 +30,7 @@ export default function App() {
         </button>
       )}
 
-      {/* Flowers */}
+      {/* Flowers (always render on top, z-index set in CSS) */}
       {flowers.map((f) => (
         <div
           key={f.id}
@@ -46,11 +45,11 @@ export default function App() {
         </div>
       ))}
 
-      {/* Invitation card */}
+      {/* Show card only after click */}
       {showCard && (
         <div className="invitation-card fade-in">
           <img
-            src={inviteImg}
+            src="/invite.png"
             alt="Mehndi Invitation"
             className="card-image"
           />
