@@ -49,7 +49,7 @@ export default function App() {
       {showCard && (
         <div className="invitation-card fade-in">
           <img
-            src={`${process.env.PUBLIC_URL}/invite.png`}
+            src="/invite.png"
             alt="Mehndi Invitation"
             className="card-image"
           />
