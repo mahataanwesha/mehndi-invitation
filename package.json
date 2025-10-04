@@ -2,10 +2,12 @@
   "name": "invitation",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
+ "scripts": {
   "dev": "vite",
   "build": "npx vite build",
-  "preview": "vite preview"
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
 },
   "dependencies": {
     "react": "^18.3.1",
