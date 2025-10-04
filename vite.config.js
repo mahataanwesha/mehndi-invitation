@@ -4,8 +4,8 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "./", // ✅ important for correct relative paths on Vercel
+  base: "/mehndi-invitation/", // GitHub Pages needs the repo name as base
   build: {
-    outDir: "dist", // Vercel expects this
+    outDir: "dist", // default Vite build folder
   },
 });
