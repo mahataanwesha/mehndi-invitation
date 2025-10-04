@@ -8,8 +8,8 @@ export default function App() {
   useEffect(() => {
     if (showCard) {
       const interval = setInterval(() => {
-        const size = 20 + Math.random() * 20; // 20-40px
-        const duration = 3 + Math.random() * 3; // 3-6s
+        const size = 20 + Math.random() * 20; // 20–40px
+        const duration = 3 + Math.random() * 3; // 3–6s
         const left = Math.random() * 100;
 
         setFlowers((prev) => [
@@ -30,7 +30,7 @@ export default function App() {
         </button>
       )}
 
-      {/* Flowers (always render on top, z-index set in CSS) */}
+      {/* Falling flowers */}
       {flowers.map((f) => (
         <div
           key={f.id}
@@ -45,11 +45,11 @@ export default function App() {
         </div>
       ))}
 
-      {/* Show card only after click */}
+      {/* Invitation card */}
       {showCard && (
         <div className="invitation-card fade-in">
           <img
-            src="/invite.png"
+            src={`${process.env.PUBLIC_URL}/invite.png`}
             alt="Mehndi Invitation"
             className="card-image"
           />
